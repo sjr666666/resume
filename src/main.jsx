@@ -97,7 +97,7 @@ function App() {
       <main>
         <section className="hero" id="top">
           <video className="hero-video" autoPlay muted loop playsInline poster="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=80">
-            <source src="https://cdn.coverr.co/videos/coverr-a-close-up-of-a-server-1574/1080p.mp4" type="video/mp4" />
+            <source src={`${import.meta.env.BASE_URL}hero-chess.mp4`} type="video/mp4" />
           </video>
           <div className="hero-overlay" />
           <div className="hero-wordmark" aria-hidden="true"><span>JAVA</span><em>SYSTEMS</em></div>
