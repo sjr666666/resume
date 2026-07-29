@@ -90,7 +90,7 @@ function App() {
           <a href="#projects" onClick={closeMenu}>项目 <span>02</span></a>
           <a href="#strengths" onClick={closeMenu}>优势 <span>03</span></a>
         </nav>
-        <a className="header-contact" href="mailto:itjingrong@qq.com">联系我 <ArrowUpRight size={15} /></a>
+        <a className="header-contact" href="mailto:itjingrong@qq.com?subject=Job%20inquiry&body=Hello%20Shi%20Jingrong%2C%20I%20found%20your%20portfolio%20website." title="发送邮件至 itjingrong@qq.com" aria-label="发送邮件至 itjingrong@qq.com">联系我 <ArrowUpRight size={15} /></a>
         <button className="menu-toggle" aria-label={menuOpen ? '关闭菜单' : '打开菜单'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
       </header>
 
