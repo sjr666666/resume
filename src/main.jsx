@@ -50,6 +50,36 @@ const strengths = [
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const revealRef = useRef(null)
+  const heroVideoRef = useRef(null)
+
+  useEffect(() => {
+    const video = heroVideoRef.current
+    if (!video) return undefined
+
+    const playVideo = () => {
+      video.muted = true
+      const attempt = video.play()
+      if (attempt?.catch) attempt.catch(() => {})
+    }
+    const unlockVideo = () => {
+      playVideo()
+      window.removeEventListener('touchstart', unlockVideo)
+      window.removeEventListener('pointerdown', unlockVideo)
+    }
+
+    video.addEventListener('loadeddata', playVideo)
+    video.addEventListener('canplay', playVideo)
+    window.addEventListener('touchstart', unlockVideo, { once: true, passive: true })
+    window.addEventListener('pointerdown', unlockVideo, { once: true, passive: true })
+    playVideo()
+
+    return () => {
+      video.removeEventListener('loadeddata', playVideo)
+      video.removeEventListener('canplay', playVideo)
+      window.removeEventListener('touchstart', unlockVideo)
+      window.removeEventListener('pointerdown', unlockVideo)
+    }
+  }, [])
 
   useEffect(() => {
     const nodes = document.querySelectorAll('.reveal')
@@ -96,7 +126,7 @@ function App() {
 
       <main>
         <section className="hero" id="top">
-          <video className="hero-video" autoPlay muted loop playsInline>
+          <video ref={heroVideoRef} className="hero-video" autoPlay muted loop playsInline preload="auto" webkit-playsinline="true" aria-hidden="true">
             <source src={`${import.meta.env.BASE_URL}hero-chess.mp4`} type="video/mp4" />
           </video>
           <div className="hero-overlay" />
