@@ -100,6 +100,7 @@ function App() {
             <source src="https://cdn.coverr.co/videos/coverr-a-close-up-of-a-server-1574/1080p.mp4" type="video/mp4" />
           </video>
           <div className="hero-overlay" />
+          <div className="hero-wordmark" aria-hidden="true"><span>JAVA</span><em>SYSTEMS</em></div>
           <div className="hero-grid" />
           <div className="hero-signal hero-signal-one" />
           <div className="hero-signal hero-signal-two" />
