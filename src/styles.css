@@ -62,3 +62,11 @@ em { font-style:normal; color:var(--mint); }
 .project-status { position:absolute; top:24px; right:24px; padding:8px 10px; color:#c5a687; border:1px solid rgba(244,162,97,.35); border-radius:7px; background:rgba(25,15,10,.32); font:500 9px 'DM Mono',monospace; letter-spacing:.08em; }
 .strength-card { transition:background .3s,border-color .3s,transform .3s; }
 .strength-card:hover { border-color:rgba(167,232,207,.35); transform:translateY(-3px); }
+
+@media (hover:hover) and (pointer:fine) {
+  .project-card { transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .45s,box-shadow .45s; }
+  .project-card:hover { transform:translateY(-8px); border-color:rgba(167,232,207,.32); box-shadow:0 24px 55px rgba(0,0,0,.28),0 0 30px rgba(167,232,207,.06); }
+  .project-card:hover .project-info { background:linear-gradient(135deg,rgba(167,232,207,.04),transparent 45%); }
+  .project-card:hover .project-type { letter-spacing:.16em; transition:letter-spacing .4s; }
+  .project-card:hover .visual-console { color:var(--mint); transition:color .3s; }
+}
