@@ -96,7 +96,7 @@ function App() {
 
       <main>
         <section className="hero" id="top">
-          <video className="hero-video" autoPlay muted loop playsInline poster="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=80">
+          <video className="hero-video" autoPlay muted loop playsInline>
             <source src={`${import.meta.env.BASE_URL}hero-chess.mp4`} type="video/mp4" />
           </video>
           <div className="hero-overlay" />
