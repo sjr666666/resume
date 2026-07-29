@@ -19,6 +19,7 @@ const projects = [
     ],
     image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=85',
     tags: ['Spring Boot', 'DeepSeek', 'OCR'],
+    github: 'https://github.com/sjr666666/aaagame',
     accent: 'mint',
   },
   {
@@ -34,6 +35,7 @@ const projects = [
     ],
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=85',
     tags: ['MySQL', 'Redis', 'REST API'],
+    status: 'CLIENT PROJECT',
     accent: 'amber',
   },
 ]
@@ -108,12 +110,12 @@ function App() {
         <section className="projects section" id="projects">
           <div className="section-aside reveal"><span className="section-number">02</span><span>SELECTED WORK</span></div>
           <div className="projects-main"><div className="section-heading reveal"><p className="eyebrow">Systems in the wild</p><h2>精选项目</h2><span className="heading-note">真实业务，真实约束，真实交付。</span></div>
-            <div className="project-list">{projects.map((project) => <article className={`project-card ${project.accent} reveal`} key={project.index}><div className="project-visual"><img src={project.image} alt="" /><div className="visual-shade" /><span className="project-index">{project.index}</span><span className="project-open"><ArrowUpRight size={21} /></span><div className="visual-console"><span className="console-dot" /><span>LIVE / {project.index === '01' ? 'MEDICATION_FLOW' : 'GROWTH_PIPELINE'}</span></div></div><div className="project-info"><div><p className="project-type">{project.type}</p><h3>{project.title}</h3><p className="project-description">{project.description}</p></div><div className="project-highlights"><p className="highlight-label">MY CONTRIBUTION</p><ul>{project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul></div><div className="tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div></div></article>)}</div>
+            <div className="project-list">{projects.map((project) => <article className={`project-card ${project.accent} reveal`} key={project.index}><div className="project-visual"><img src={project.image} alt="" /><div className="visual-shade" /><span className="project-index">{project.index}</span>{project.github ? <a className="project-open" href={project.github} target="_blank" rel="noreferrer" aria-label={`在 GitHub 查看${project.title}`}><ArrowUpRight size={21} /></a> : <span className="project-status">{project.status}</span>}<div className="visual-console"><span className="console-dot" /><span>LIVE / {project.index === '01' ? 'MEDICATION_FLOW' : 'GROWTH_PIPELINE'}</span></div></div><div className="project-info"><div><p className="project-type">{project.type}</p><h3>{project.title}</h3><p className="project-description">{project.description}</p></div><div className="project-highlights"><p className="highlight-label">MY CONTRIBUTION</p><ul>{project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul></div><div className="tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div></div></article>)}</div>
             <a className="github-link reveal" href="https://github.com/sjr666666/aaagame" target="_blank" rel="noreferrer"><span className="github-icon"><Code2 size={20} /></span><span className="github-copy"><strong>在 GitHub 查看完整项目</strong><small>源码、架构与实现细节</small></span><span className="github-arrow"><ArrowUpRight size={20} /></span></a>
           </div>
         </section>
 
-        <section className="strengths section" id="strengths"><div className="section-aside reveal"><span className="section-number">03</span><span>WHAT I BRING</span></div><div className="strengths-main"><div className="section-heading reveal"><p className="eyebrow">Not just a stack</p><h2>个人优势</h2></div><div className="strength-grid">{strengths.map(([number, title, copy]) => <article className="strength-card reveal" key={number}><span>{number}</span><h3>{title}</h3><p>{copy}</p><ArrowUpRight className="strength-arrow" size={18} /></article>)}</div></div></section>
+        <section className="strengths section" id="strengths"><div className="section-aside reveal"><span className="section-number">03</span><span>WHAT I BRING</span></div><div className="strengths-main"><div className="section-heading reveal"><p className="eyebrow">Not just a stack</p><h2>个人优势</h2></div><div className="strength-grid">{strengths.map(([number, title, copy]) => <article className="strength-card reveal" key={number}><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
 
         <section className="closing" id="contact"><div className="closing-noise" /><div className="closing-inner"><p className="eyebrow reveal">Open to meaningful work</p><h2 className="reveal">下一个系统，<br /><em>一起做得更好。</em></h2><a className="closing-email reveal" href="mailto:itjingrong@qq.com">itjingrong@qq.com <ArrowUpRight size={22} /></a><div className="closing-footer reveal"><span>石敬荣 / JAVA BACKEND & FULL-STACK</span><span>© 2026</span><a href="#top">回到顶部 ↑</a></div></div></section>
       </main>
