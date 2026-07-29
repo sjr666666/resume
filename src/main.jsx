@@ -53,9 +53,18 @@ function App() {
 
   useEffect(() => {
     const nodes = document.querySelectorAll('.reveal')
+    let lastScrollY = window.scrollY
+    let scrollDirection = 'down'
+    const updateDirection = () => {
+      const currentY = window.scrollY
+      scrollDirection = currentY >= lastScrollY ? 'down' : 'up'
+      lastScrollY = currentY
+    }
+    window.addEventListener('scroll', updateDirection, { passive: true })
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          entry.target.dataset.direction = scrollDirection
           entry.target.classList.add('is-visible')
         } else if (!entry.target.closest('.hero')) {
           // Reset content after leaving the viewport so it animates again on re-entry.
@@ -64,7 +73,10 @@ function App() {
       })
     }, { threshold: 0.18 })
     nodes.forEach((node) => observer.observe(node))
-    return () => observer.disconnect()
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('scroll', updateDirection)
+    }
   }, [])
 
   const closeMenu = () => setMenuOpen(false)
