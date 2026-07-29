@@ -112,7 +112,7 @@ function App() {
             <h1 className="hero-title reveal">让复杂系统<br /><em>安静地工作。</em></h1>
             <div className="hero-bottom reveal">
               <p>石敬荣是一名软件工程本科在读开发者，专注 Java 后端、全栈交付与 AI 应用工程。</p>
-              <a className="round-link" href="#projects" aria-label="查看项目"><ArrowDownRight size={28} /></a>
+              <a className="hero-project-link" href="#projects"><span>查看精选项目</span><ArrowDownRight size={18} /></a>
             </div>
           </div>
           <div className="hero-meta"><span>SCROLL TO EXPLORE</span><span>深圳 / CHINA</span><span>AVAILABLE NOW</span></div>
