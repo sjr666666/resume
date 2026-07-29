@@ -65,8 +65,17 @@ em { font-style:normal; color:var(--mint); }
 
 @media (hover:hover) and (pointer:fine) {
   .project-card { transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .45s,box-shadow .45s; }
-  .project-card:hover { transform:translateY(-8px); border-color:rgba(167,232,207,.32); box-shadow:0 24px 55px rgba(0,0,0,.28),0 0 30px rgba(167,232,207,.06); }
-  .project-card:hover .project-info { background:linear-gradient(135deg,rgba(167,232,207,.04),transparent 45%); }
+  .project-card:hover { transform:translateY(-12px) scale(1.012); border-color:var(--mint); box-shadow:0 28px 65px rgba(0,0,0,.42),0 0 42px rgba(167,232,207,.13); }
+  .project-visual::after { content:''; position:absolute; inset:-40% -20%; pointer-events:none; background:linear-gradient(110deg,transparent 38%,rgba(167,232,207,.22) 50%,transparent 62%); transform:translateX(-100%) rotate(8deg); transition:transform .85s ease; }
+  .project-card:hover .project-visual::after { transform:translateX(100%) rotate(8deg); }
+  .project-card:hover .project-visual img { transform:scale(1.1); filter:saturate(1) brightness(.82); }
+  .project-card:hover .project-info { background:linear-gradient(135deg,rgba(167,232,207,.1),transparent 48%); }
   .project-card:hover .project-type { letter-spacing:.16em; transition:letter-spacing .4s; }
   .project-card:hover .visual-console { color:var(--mint); transition:color .3s; }
+  .project-card:hover .project-open { transform:translate(4px,-4px) rotate(12deg); background:var(--mint); color:var(--bg); }
+  .project-card:hover .project-status { color:var(--mint); border-color:var(--mint); }
+  .strength-card { overflow:hidden; }
+  .strength-card::after { content:''; position:absolute; inset:-50% -25%; pointer-events:none; background:linear-gradient(110deg,transparent 40%,rgba(167,232,207,.14) 50%,transparent 60%); transform:translateX(-100%) rotate(8deg); transition:transform .75s ease; }
+  .strength-card:hover::after { transform:translateX(100%) rotate(8deg); }
+  .strength-card:hover h3 { color:var(--mint); transform:translateX(6px); transition:color .3s,transform .3s; }
 }
