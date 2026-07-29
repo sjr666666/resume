@@ -105,6 +105,8 @@ function App() {
           <div className="hero-signal hero-signal-two" />
           <div className="hero-particles" />
           <div className="hero-scanline" />
+          <div className="hero-core-visual" aria-hidden="true"><div className="core-halo" /><div className="core-ring core-ring-one" /><div className="core-ring core-ring-two" /><div className="core-chip"><span /><span /><span /><span /><b>AI</b></div><div className="core-orbit orbit-a" /><div className="core-orbit orbit-b" /><div className="core-readout">SYS / ONLINE<br /><strong>99.9%</strong> STABLE</div></div>
+          <div className="hero-stats"><div><strong>20K<span>+</span></strong><small>JAVA LINES</small></div><div><strong>10<span>+</span></strong><small>MODULES SHIPPED</small></div><div><strong>170</strong><small>JAVA CLASSES</small></div><div className="hero-live"><i /> LIVE SYSTEM <span>↗</span></div></div>
           <div className="hero-content">
             <p className="kicker reveal">JAVA BACKEND / FULL-STACK DEVELOPER</p>
             <h1 className="hero-title reveal">让复杂系统<br /><em>安静地工作。</em></h1>
