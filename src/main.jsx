@@ -101,6 +101,10 @@ function App() {
           </video>
           <div className="hero-overlay" />
           <div className="hero-grid" />
+          <div className="hero-signal hero-signal-one" />
+          <div className="hero-signal hero-signal-two" />
+          <div className="hero-particles" />
+          <div className="hero-scanline" />
           <div className="hero-content">
             <p className="kicker reveal">JAVA BACKEND / FULL-STACK DEVELOPER</p>
             <h1 className="hero-title reveal">让复杂系统<br /><em>安静地工作。</em></h1>
