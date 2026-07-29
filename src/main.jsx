@@ -55,9 +55,14 @@ function App() {
     const nodes = document.querySelectorAll('.reveal')
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('is-visible')
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible')
+        } else if (!entry.target.closest('.hero')) {
+          // Reset content after leaving the viewport so it animates again on re-entry.
+          entry.target.classList.remove('is-visible')
+        }
       })
-    }, { threshold: 0.12 })
+    }, { threshold: 0.18 })
     nodes.forEach((node) => observer.observe(node))
     return () => observer.disconnect()
   }, [])
