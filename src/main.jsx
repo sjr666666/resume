@@ -105,21 +105,6 @@ function App() {
           <div className="hero-signal hero-signal-two" />
           <div className="hero-particles" />
           <div className="hero-scanline" />
-          <div className="hero-runtime" aria-hidden="true">
-            <div className="runtime-topline"><span><i /> RUNTIME CONSOLE</span><b>LIVE  /  01</b></div>
-            <div className="runtime-heading"><strong>JAVA 21</strong><span>SPRING BOOT / ONLINE</span></div>
-            <div className="runtime-chart">
-              <div className="chart-grid" />
-              <div className="chart-line chart-line-one" />
-              <div className="chart-line chart-line-two" />
-              <div className="chart-pulse pulse-one" />
-              <div className="chart-pulse pulse-two" />
-              <span className="chart-label chart-label-one">WS / 42ms</span>
-              <span className="chart-label chart-label-two">API / 99.9%</span>
-            </div>
-            <div className="runtime-metrics"><span><b>42</b><small>LATENCY / MS</small></span><span><b>99.9</b><small>UPTIME / %</small></span><span><b>10+</b><small>MODULES</small></span></div>
-            <div className="runtime-stack"><span>JWT AUTH</span><span>REDIS CACHE</span><span>DEEPSEEK</span></div>
-          </div>
           <div className="hero-stats"><div><strong>20K<span>+</span></strong><small>JAVA LINES</small></div><div><strong>10<span>+</span></strong><small>MODULES SHIPPED</small></div><div><strong>170</strong><small>JAVA CLASSES</small></div><div className="hero-live"><i /> LIVE SYSTEM <span>↗</span></div></div>
           <div className="hero-content">
             <p className="kicker reveal">JAVA BACKEND / FULL-STACK DEVELOPER</p>
