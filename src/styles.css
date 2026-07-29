@@ -65,8 +65,8 @@ em { font-style:normal; color:var(--mint); }
 
 @media (hover:hover) and (pointer:fine) {
   .project-card, .strength-card { position:relative; isolation:isolate; }
-  .project-card::before, .strength-card::before { content:''; position:absolute; z-index:-1; inset:-2px; padding:1px; border-radius:inherit; background:linear-gradient(135deg,var(--mint),rgba(167,232,207,.15) 38%,rgba(244,162,97,.8) 68%,var(--mint)); -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; opacity:0; filter:blur(5px); transition:opacity .35s; }
-  .project-card:hover::before, .strength-card:hover::before { opacity:.95; animation:border-pulse 2.4s ease-in-out infinite; }
+  .project-card::before, .strength-card::before { content:''; position:absolute; z-index:-1; inset:-2px; padding:1px; border-radius:inherit; background:conic-gradient(from var(--border-angle),transparent 0deg,transparent 285deg,rgba(167,232,207,.2) 310deg,var(--mint) 330deg,#fff 345deg,var(--amber) 354deg,transparent 360deg); -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; opacity:0; filter:drop-shadow(0 0 5px rgba(167,232,207,.9)); transition:opacity .35s; }
+  .project-card:hover::before, .strength-card:hover::before { opacity:1; animation:border-trace 2.2s linear infinite; }
   .project-card { transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .45s,box-shadow .45s; }
   .project-card:hover { transform:translateY(-12px) scale(1.012); border-color:rgba(167,232,207,.55); box-shadow:0 28px 65px rgba(0,0,0,.42),0 0 42px rgba(167,232,207,.13); }
   .project-card:hover .project-visual img { transform:scale(1.1); filter:saturate(1) brightness(.82); }
@@ -77,4 +77,5 @@ em { font-style:normal; color:var(--mint); }
   .project-card:hover .project-status { color:var(--mint); border-color:var(--mint); }
   .strength-card:hover h3 { color:var(--mint); transform:translateX(6px); transition:color .3s,transform .3s; }
 }
-@keyframes border-pulse { 0%,100% { filter:blur(4px); opacity:.65; } 50% { filter:blur(8px); opacity:1; } }
+@property --border-angle { syntax:'<angle>'; inherits:false; initial-value:0deg; }
+@keyframes border-trace { to { --border-angle:360deg; } }
