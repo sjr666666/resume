@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="900" viewBox="0 0 640 900">
+  <rect width="640" height="900" rx="28" fill="#10191b"/>
+  <rect x="24" y="24" width="592" height="852" rx="20" fill="none" stroke="#a7e8cf" stroke-opacity=".55"/>
+  <text x="48" y="78" fill="#a7e8cf" font-family="monospace" font-size="18" letter-spacing="3">SJR / PROFILE CARD</text>
+  <text x="48" y="190" fill="#edf2ee" font-family="Arial,sans-serif" font-size="48" font-weight="700">SHI JINGRONG</text>
+  <text x="48" y="232" fill="#f4a261" font-family="monospace" font-size="18" letter-spacing="2">JAVA BACKEND / FULL-STACK</text>
+  <line x1="48" y1="280" x2="592" y2="280" stroke="#d7ebe1" stroke-opacity=".2"/>
+  <text x="48" y="340" fill="#a7e8cf" font-family="monospace" font-size="16">FOCUS</text>
+  <text x="48" y="374" fill="#edf2ee" font-family="Arial,sans-serif" font-size="24">Spring Boot · WebSocket</text>
+  <text x="48" y="410" fill="#edf2ee" font-family="Arial,sans-serif" font-size="24">React · AI Applications</text>
+  <text x="48" y="480" fill="#a7e8cf" font-family="monospace" font-size="16">CONTACT</text>
+  <text x="48" y="516" fill="#edf2ee" font-family="monospace" font-size="21">itjingrong@qq.com</text>
+  <text x="48" y="552" fill="#899996" font-family="monospace" font-size="17">github.com/sjr666666</text>
+  <circle cx="520" cy="756" r="58" fill="#a7e8cf" fill-opacity=".12" stroke="#a7e8cf"/>
+  <text x="488" y="766" fill="#a7e8cf" font-family="monospace" font-size="26">SJR</text>
+  <text x="48" y="820" fill="#899996" font-family="monospace" font-size="15" letter-spacing="2">BUILD / TEST / SHIP</text>
+</svg>

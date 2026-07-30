@@ -1,0 +1,48 @@
+.border-glow-card {
+  --edge-proximity: 0;
+  --cursor-angle: 45deg;
+  position: relative;
+  isolation: isolate;
+  border-radius: 14px;
+  min-width: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  overflow: visible;
+}
+.strength-grid > .border-glow-card {
+  min-width: 0;
+}
+.border-glow-card::before,
+.border-glow-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: calc(var(--edge-proximity) / 100);
+  transition: opacity .25s ease;
+}
+.border-glow-card::before {
+  z-index: 2;
+  padding: 1px;
+  background: conic-gradient(from var(--cursor-angle), transparent 0deg 326deg, var(--glow-a) 337deg, var(--glow-b) 348deg, var(--glow-c) 355deg, transparent 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  filter: drop-shadow(0 0 5px var(--glow-a)) drop-shadow(0 0 12px color-mix(in srgb, var(--glow-b), transparent 30%));
+}
+.border-glow-card::after {
+  z-index: 1;
+  inset: -1px;
+  padding: 2px;
+  background: conic-gradient(from var(--cursor-angle), transparent 0deg 326deg, color-mix(in srgb, var(--glow-a), transparent 35%) 340deg, color-mix(in srgb, var(--glow-b), transparent 20%) 354deg, transparent 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  filter: blur(7px);
+}
+.border-glow-inner { position: relative; z-index: 3; min-width: 0; overflow: hidden; border-radius: inherit; }
+.border-glow-inner > .project-card,
+.border-glow-inner > .strength-card { border-color: transparent; }
+@media (prefers-reduced-motion: reduce) { .border-glow-card::before,.border-glow-card::after { transition:none; } }

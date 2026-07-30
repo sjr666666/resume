@@ -2,7 +2,12 @@ import React, { useEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ArrowDownRight, ArrowUpRight, Code2, Mail, MapPin, Menu, X } from 'lucide-react'
 import avatar from './assets/avatar.png'
+import TextPressure from './components/TextPressure'
+import Lanyard from './components/lanyard/Lanyard'
+import BorderGlow from './components/BorderGlow'
 import './styles.css'
+import './components/lanyard/Lanyard.css'
+
 
 const projects = [
   {
@@ -130,7 +135,16 @@ function App() {
             <source src={`${import.meta.env.BASE_URL}hero-chess.mp4`} type="video/mp4" />
           </video>
           <div className="hero-overlay" />
-          <div className="hero-wordmark" aria-hidden="true"><span>JAVA</span><em>SYSTEMS</em></div>
+          <div className="hero-wordmark"><TextPressure text="JAVA SYSTEMS" textColor="rgba(237,242,238,.1)" minFontSize={72} /></div>
+          <div className="hero-lanyard" aria-label="石敬荣个人信息卡">
+            <Lanyard
+              frontImage={avatar}
+              backImage={`${import.meta.env.BASE_URL}lanyard-back.svg`}
+              imageFit="cover"
+              position={[0, 0, 24]}
+              gravity={[0, -36, 0]}
+            />
+          </div>
           <div className="hero-grid" />
           <div className="hero-signal hero-signal-one" />
           <div className="hero-signal hero-signal-two" />
@@ -163,12 +177,12 @@ function App() {
         <section className="projects section" id="projects">
           <div className="section-aside reveal"><span className="section-number">02</span><span>SELECTED WORK</span></div>
           <div className="projects-main"><div className="section-heading reveal"><p className="eyebrow">Systems in the wild</p><h2>精选项目</h2><span className="heading-note">真实业务，真实约束，真实交付。</span></div>
-            <div className="project-list">{projects.map((project) => <article className={`project-card ${project.accent} reveal`} key={project.index}><div className="project-visual"><img src={project.image} alt="" /><div className="visual-shade" /><span className="project-index">{project.index}</span>{project.github ? <a className="project-open" href={project.github} target="_blank" rel="noreferrer" aria-label={`在 GitHub 查看${project.title}`}><ArrowUpRight size={21} /></a> : <span className="project-status">{project.status}</span>}<div className="visual-console"><span className="console-dot" /><span>LIVE / {project.index === '01' ? 'MEDICATION_FLOW' : 'GROWTH_PIPELINE'}</span></div></div><div className="project-info"><div><p className="project-type">{project.type}</p><h3>{project.title}</h3><p className="project-description">{project.description}</p></div><div className="project-highlights"><p className="highlight-label">MY CONTRIBUTION</p><ul>{project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul></div><div className="tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div></div></article>)}</div>
+            <div className="project-list">{projects.map((project) => <BorderGlow className="reveal" key={project.index}><article className={`project-card ${project.accent}`}><div className="project-visual"><img src={project.image} alt="" /><div className="visual-shade" /><span className="project-index">{project.index}</span>{project.github ? <a className="project-open" href={project.github} target="_blank" rel="noreferrer" aria-label={`在 GitHub 查看${project.title}`}><ArrowUpRight size={21} /></a> : <span className="project-status">{project.status}</span>}<div className="visual-console"><span className="console-dot" /><span>LIVE / {project.index === '01' ? 'MEDICATION_FLOW' : 'GROWTH_PIPELINE'}</span></div></div><div className="project-info"><div><p className="project-type">{project.type}</p><h3>{project.title}</h3><p className="project-description">{project.description}</p></div><div className="project-highlights"><p className="highlight-label">MY CONTRIBUTION</p><ul>{project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul></div><div className="tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div></div></article></BorderGlow>)}</div>
             <a className="github-link reveal" href="https://github.com/sjr666666/aaagame" target="_blank" rel="noreferrer"><span className="github-icon"><Code2 size={20} /></span><span className="github-copy"><strong>在 GitHub 查看完整项目</strong><small>源码、架构与实现细节</small></span><span className="github-arrow"><ArrowUpRight size={20} /></span></a>
           </div>
         </section>
 
-        <section className="strengths section" id="strengths"><div className="section-aside reveal"><span className="section-number">03</span><span>WHAT I BRING</span></div><div className="strengths-main"><div className="section-heading reveal"><p className="eyebrow">Not just a stack</p><h2>个人优势</h2></div><div className="strength-grid">{strengths.map(([number, title, copy]) => <article className="strength-card reveal" key={number}><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
+        <section className="strengths section" id="strengths"><div className="section-aside reveal"><span className="section-number">03</span><span>WHAT I BRING</span></div><div className="strengths-main"><div className="section-heading reveal"><p className="eyebrow">Not just a stack</p><h2>个人优势</h2></div><div className="strength-grid">{strengths.map(([number, title, copy]) => <BorderGlow className="reveal" key={number}><article className="strength-card"><span>{number}</span><h3>{title}</h3><p>{copy}</p></article></BorderGlow>)}</div></div></section>
 
         <section className="closing" id="contact"><div className="closing-noise" /><div className="closing-inner"><p className="eyebrow reveal">Open to meaningful work</p><h2 className="reveal">下一个系统，<br /><em>一起做得更好。</em></h2><a className="closing-email reveal" href="mailto:itjingrong@qq.com">itjingrong@qq.com <ArrowUpRight size={22} /></a><div className="closing-footer reveal"><span>石敬荣 / JAVA BACKEND & FULL-STACK</span><span>© 2026</span><a href="#top">回到顶部 ↑</a></div></div></section>
       </main>
