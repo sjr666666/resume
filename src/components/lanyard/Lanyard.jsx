@@ -46,6 +46,9 @@ export default function Lanyard({
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Keep the mobile hero stable on browsers with limited WebGL support.
+  if (isMobile) return null;
+
   return (
     <div className="lanyard-wrapper">
       <Canvas
