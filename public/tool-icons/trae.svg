@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="Trae CN">
+  <rect width="40" height="40" rx="10" fill="#202427"/>
+  <rect x="8" y="8" width="24" height="24" rx="3" fill="#54f2a1"/>
+  <path d="M12 14h16v12H12z" fill="#202427"/>
+  <path d="m15 19 3 2-3 2M21 23h4" fill="none" stroke="#54f2a1" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
