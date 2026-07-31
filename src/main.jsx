@@ -131,7 +131,7 @@ function App() {
 
       <main>
         <section className="hero" id="top">
-          <video ref={heroVideoRef} className="hero-video" autoPlay muted loop playsInline preload="auto" webkit-playsinline="true" aria-hidden="true">
+          <video ref={heroVideoRef} className="hero-video" autoPlay muted loop playsInline preload="auto" webkit-playsinline="true" aria-hidden="true" poster={`${import.meta.env.BASE_URL}avatar.png`}>
             <source src={`${import.meta.env.BASE_URL}hero-chess-compressed.mp4`} type="video/mp4" media="(max-width: 767px)" />
             <source src={`${import.meta.env.BASE_URL}hero-chess.mp4`} type="video/mp4" />
           </video>
